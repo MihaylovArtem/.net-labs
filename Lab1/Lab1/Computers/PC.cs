@@ -5,10 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    public class PC : ComputerBase
+    /// <summary>
+    /// Класс PC
+    /// </summary>
+    public class PC : Computer
     {
-        public PC(int purchaseYear, string manufactureCompany, int cost, string operationSystem)
-            : base(purchaseYear, manufactureCompany, cost, operationSystem)
+        private const string Os = "Windows";
+        /// <summary>
+        /// Конструктор класса PC
+        /// </summary>
+        /// <param name="purchaseYear"></param>
+        /// <param name="manufactureCompany"></param>
+        /// <param name="cost"></param>
+        public PC(int purchaseYear, string manufactureCompany, int cost)
+            : base(purchaseYear, manufactureCompany, cost, Os)
         {
             Console.WriteLine("PC Added!");
         }

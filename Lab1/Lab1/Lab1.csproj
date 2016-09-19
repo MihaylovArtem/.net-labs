@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Lab1.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,14 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Computers\MacFactory.cs" />
+    <Compile Include="Computers\PCFactory.cs" />
+    <Compile Include="Computers\IComputerFactory.cs" />
     <Compile Include="Computers\PC.cs" />
     <Compile Include="Computers\Mac.cs" />
-    <Compile Include="Computers\ComputerBase.cs" />
-    <Compile Include="Computers\IntComputer.cs" />
+    <Compile Include="Computers\Computer.cs" />
+    <Compile Include="Computers\IComputer.cs" />
     <Compile Include="Employees\Developer.cs" />
     <Compile Include="Employees\Manager.cs" />
-    <Compile Include="Employees\EmployeeBase.cs" />
-    <Compile Include="Employees\IntEmployee.cs" />
+    <Compile Include="Employees\Employee.cs" />
+    <Compile Include="Employees\IEmployee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

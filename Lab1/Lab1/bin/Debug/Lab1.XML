@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lab1</name>
+    </assembly>
+    <members>
+        <member name="T:Lab1.Computers.IComputerFactory">
+            <summary>
+            Интерфейс абстрактной фабрики
+            </summary>
+        </member>
+        <member name="M:Lab1.Computers.IComputerFactory.BuyNewComputer">
+            <summary>
+            Купить новый компьютер
+            </summary>
+            <returns>Объект класса Computer</returns>
+        </member>
+        <member name="M:Lab1.Computers.MacFactory.BuyNewComputer">
+            <summary>
+            Переопределение метода абстрактной фабрики
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Lab1.Computers.PCFactory.BuyNewComputer">
+            <summary>
+            Переопределение метода абстрактной фабрики
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Lab1.Computers.PC">
+            <summary>
+            Класс PC
+            </summary>
+        </member>
+        <member name="T:Lab1.Computers.Computer">
+            <summary>
+            Абстрактный класс Computer с интерфейсом ComputerInt
+            </summary>
+        </member>
+        <member name="T:Lab1.Computers.IComputer">
+            <summary>
+            Интерфейс класса Computer
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.IComputer.purchaseYear">
+            <summary>
+            Год покупки
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.IComputer.manufactureCompany">
+            <summary>
+            Компания-производитель
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.IComputer.cost">
+            <summary>
+            Стоимость
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.IComputer.operationSystem">
+            <summary>
+            Операционная система
+            </summary>
+        </member>
+        <member name="M:Lab1.Computers.Computer.#ctor(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Конструктор класса Computer
+            </summary>
+            <param name="PurchaseYear"></param>
+            <param name="ManufactureCompany"></param>
+            <param name="Cost"></param>
+            <param name="OperationSystem"></param>
+        </member>
+        <member name="P:Lab1.Computers.Computer.purchaseYear">
+            <summary>
+            Год покупки
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.Computer.manufactureCompany">
+            <summary>
+            Компания-производитель
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.Computer.cost">
+            <summary>
+            Стоимость
+            </summary>
+        </member>
+        <member name="P:Lab1.Computers.Computer.operationSystem">
+            <summary>
+            Операционная система
+            </summary>
+        </member>
+        <member name="M:Lab1.Computers.PC.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Конструктор класса PC
+            </summary>
+            <param name="purchaseYear"></param>
+            <param name="manufactureCompany"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="T:Lab1.Computers.Mac">
+            <summary>
+            Класс-потомок от абстрактного класса Computer
+            </summary>
+        </member>
+        <member name="M:Lab1.Computers.Mac.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Конструктор класса Mac
+            </summary>
+            <param name="purchaseYear"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="T:Lab1.Employees.Employee">
+            <summary>
+            Абстрактный класс с интерфейсом IEmployee
+            </summary>
+        </member>
+        <member name="T:Lab1.Employees.IEmployee">
+            <summary>
+            Интерфейс класса Employee
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.IEmployee.salary">
+            <summary>
+            Зарплата сотрудника
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.IEmployee.name">
+            <summary>
+            Имя сотрудника
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.IEmployee.position">
+            <summary>
+            Должность сотрудника
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.IEmployee.project">
+            <summary>
+            Проект, в котором участвует сотрудник
+            </summary>
+        </member>
+        <member name="M:Lab1.Employees.Employee.#ctor(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Конструктор класса Employee
+            </summary>
+            <param name="Name"></param>
+            <param name="Position"></param>
+            <param name="Salary"></param>
+            <param name="Project"></param>
+        </member>
+        <member name="P:Lab1.Employees.Employee.project">
+            <summary>
+            Проект, в котором участвует сотрудник
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.Employee.salary">
+            <summary>
+            Зарплата сотрудника
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.Employee.name">
+            <summary>
+            Имя сотрудника
+            </summary>
+        </member>
+        <member name="P:Lab1.Employees.Employee.position">
+            <summary>
+            Должность сотрудника
+            </summary>
+        </member>
+        <member name="T:Lab1.Employees.Manager">
+            <summary>
+            Класс-потомок абстрактного класса Employee
+            </summary>
+        </member>
+        <member name="M:Lab1.Employees.Manager.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор класса Manager
+            </summary>
+            <param name="name"></param>
+            <param name="project"></param>
+        </member>
+    </members>
+</doc>

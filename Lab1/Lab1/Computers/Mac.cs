@@ -5,12 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    public class Mac : ComputerBase
+    /// <summary>
+    /// Класс-потомок от абстрактного класса Computer
+    /// </summary>
+    public class Mac : Computer
     {
         private const string ManufactureCompany = "Apple";
-        private const string OS = "MacOS";
-
-        public Mac(int purchaseYear, int cost) : base(purchaseYear, ManufactureCompany, cost, OS)
+        private const string Os = "MacOS";
+        /// <summary>
+        /// Конструктор класса Mac
+        /// </summary>
+        /// <param name="purchaseYear"></param>
+        /// <param name="cost"></param>
+        public Mac(int purchaseYear, int cost) : base(purchaseYear, ManufactureCompany, cost, Os)
         {
             Console.WriteLine("Mac added!");
         }
