@@ -12,28 +12,23 @@ namespace Lab1.Projects {
     {
         private readonly List<T> team;
 
-        public Team(T[] employeeArray)
+        public Team(List<T> employeeArray)
         {
             team = new List<T>(employeeArray.Count());
-            for (int i = 0; i < employeeArray.Length; i++)
+            for (var i = 0; i < employeeArray.Count; i++)
             {
                 team[i] = employeeArray[i];
             }
         }
 
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             return new ProjectEnumerator<T>(new Project<T>("", team));
         }
 
-        private IEnumerator getEnumerator1()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return getEnumerator1();
+            return new ProjectEnumerator<T>(new Project<T>("", team));
         }
     }
 }

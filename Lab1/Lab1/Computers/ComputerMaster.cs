@@ -5,6 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    class ComputerMaster {
+    class ComputerMaster<T> : IComputerMaster<T> where T : IComputer
+    {
+        /// <summary>
+        /// Ремонт компьютера
+        /// </summary>
+        /// <param name="computer"></param>
+        public void repair(T computer) {
+            Console.WriteLine("Repaired!");
+        } 
     }
 }

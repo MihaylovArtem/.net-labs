@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -58,6 +60,22 @@ namespace Lab1.Projects {
             }
         }
 
+        public void printProjectTeam()
+        {
+            foreach (T participant in getProjectTeam())
+            {
+                Console.WriteLine(participant.name + "\n");
+            }
+        }
+
+        private IEnumerable getProjectTeam()
+        {
+            for (var i = 0; i < participants.Count; i++)
+            {
+                yield return participants[i];
+            }
+        }
+
         public bool IsReadOnly
         {
             get { return false; }
@@ -65,8 +83,13 @@ namespace Lab1.Projects {
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new ProjectEnumerator<T>();
+            return new ProjectEnumerator<T>(this);
         }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new ProjectEnumerator<T>(this);
+        } 
 
     }
 }

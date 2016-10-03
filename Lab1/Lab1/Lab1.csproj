@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Computers\ComputerMaster.cs" />
+    <Compile Include="Computers\IComputerMaster.cs" />
     <Compile Include="Computers\MacFactory.cs" />
     <Compile Include="Computers\PCFactory.cs" />
     <Compile Include="Computers\IComputerFactory.cs" />

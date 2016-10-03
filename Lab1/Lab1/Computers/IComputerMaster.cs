@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    interface IComputerMaster {
+    interface IComputerMaster<in T> where T : IComputer
+    {
+        /// <summary>
+        /// Ремонт компьютера
+        /// </summary>
+        /// <param name="computer"></param>
+        void repair(T computer);
     }
 }
