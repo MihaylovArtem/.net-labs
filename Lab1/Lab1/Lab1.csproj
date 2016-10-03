@@ -54,6 +54,10 @@
     <Compile Include="Employees\Employee.cs" />
     <Compile Include="Employees\IEmployee.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projects\Team.cs" />
+    <Compile Include="Projects\IProject.cs" />
+    <Compile Include="Projects\Project.cs" />
+    <Compile Include="Projects\ProjectEnumerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

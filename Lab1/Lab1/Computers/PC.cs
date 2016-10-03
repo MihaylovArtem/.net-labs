@@ -22,5 +22,15 @@ namespace Lab1.Computers {
         {
             Console.WriteLine("PC Added!");
         }
+
+        public override void installAntivirus()
+        {
+            Console.WriteLine("Antivirus was successfully installed from bestantirus2106forfree.com");
+        }
+
+        public override object Clone()
+        {
+            return new PC(purchaseYear, manufactureCompany, cost);
+        }
     }
 }

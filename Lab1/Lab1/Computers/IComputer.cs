@@ -8,7 +8,7 @@ namespace Lab1.Computers {
     /// <summary>
     /// Интерфейс класса Computer
     /// </summary>
-    public interface IComputer {
+    public interface IComputer : ICloneable {
         /// <summary>
         /// Год покупки
         /// </summary>
@@ -25,5 +25,7 @@ namespace Lab1.Computers {
         /// Операционная система
         /// </summary>
         string operationSystem { get; }
+
+        void installAntivirus();
     }
 }

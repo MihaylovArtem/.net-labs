@@ -111,76 +111,76 @@
             <param name="purchaseYear"></param>
             <param name="cost"></param>
         </member>
-        <member name="T:Lab1.Employees.Employee">
+        <member name="T:Lab1.Employees.Employee`1">
             <summary>
             Абстрактный класс с интерфейсом IEmployee
             </summary>
         </member>
-        <member name="T:Lab1.Employees.IEmployee">
+        <member name="T:Lab1.Employees.IEmployee`1">
             <summary>
             Интерфейс класса Employee
             </summary>
         </member>
-        <member name="P:Lab1.Employees.IEmployee.salary">
+        <member name="P:Lab1.Employees.IEmployee`1.salary">
             <summary>
             Зарплата сотрудника
             </summary>
         </member>
-        <member name="P:Lab1.Employees.IEmployee.name">
+        <member name="P:Lab1.Employees.IEmployee`1.name">
             <summary>
             Имя сотрудника
             </summary>
         </member>
-        <member name="P:Lab1.Employees.IEmployee.position">
+        <member name="P:Lab1.Employees.IEmployee`1.position">
             <summary>
             Должность сотрудника
             </summary>
         </member>
-        <member name="P:Lab1.Employees.IEmployee.project">
+        <member name="P:Lab1.Employees.IEmployee`1.computer">
             <summary>
             Проект, в котором участвует сотрудник
             </summary>
         </member>
-        <member name="M:Lab1.Employees.Employee.#ctor(System.String,System.String,System.Int32,System.String)">
+        <member name="M:Lab1.Employees.Employee`1.#ctor(System.String,System.String,System.Int32,`0)">
             <summary>
             Конструктор класса Employee
             </summary>
             <param name="Name"></param>
             <param name="Position"></param>
             <param name="Salary"></param>
-            <param name="Project"></param>
+            <param name="computer"></param>
         </member>
-        <member name="P:Lab1.Employees.Employee.project">
-            <summary>
-            Проект, в котором участвует сотрудник
-            </summary>
-        </member>
-        <member name="P:Lab1.Employees.Employee.salary">
+        <member name="P:Lab1.Employees.Employee`1.salary">
             <summary>
             Зарплата сотрудника
             </summary>
         </member>
-        <member name="P:Lab1.Employees.Employee.name">
+        <member name="P:Lab1.Employees.Employee`1.name">
             <summary>
             Имя сотрудника
             </summary>
         </member>
-        <member name="P:Lab1.Employees.Employee.position">
+        <member name="P:Lab1.Employees.Employee`1.position">
             <summary>
             Должность сотрудника
             </summary>
         </member>
-        <member name="T:Lab1.Employees.Manager">
+        <member name="P:Lab1.Employees.Employee`1.computer">
+            <summary>
+            Компьютер, который закреплен за этим сотрудником
+            </summary>
+        </member>
+        <member name="T:Lab1.Employees.Manager`1">
             <summary>
             Класс-потомок абстрактного класса Employee
             </summary>
         </member>
-        <member name="M:Lab1.Employees.Manager.#ctor(System.String,System.String)">
+        <member name="M:Lab1.Employees.Manager`1.#ctor(System.String,`0)">
             <summary>
             Конструктор класса Manager
             </summary>
             <param name="name"></param>
-            <param name="project"></param>
+            <param name="computer"></param>
         </member>
     </members>
 </doc>

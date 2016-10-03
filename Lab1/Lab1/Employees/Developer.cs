@@ -7,11 +7,11 @@ using Lab1.Computers;
 
 namespace Lab1.Employees
 {
-    class Developer : Employee {
+    class Developer<T> : Employee<T> where T : IComputer {
         private const string Position = "Developer";
         private const int Salary = 60000;
 
-        public Developer(string name, string project, IComputer computer) : base(name, Position, Salary, project, computer) {
+        public Developer(string name, T computer) : base(name, Position, Salary, computer) {
             Console.WriteLine("Developer added!");
         }
     }

@@ -10,7 +10,7 @@ namespace Lab1.Employees
     /// <summary>
     /// Интерфейс класса Employee
     /// </summary>
-    public interface IEmployee {
+    public interface IEmployee<out T> where T : IComputer {
         /// <summary>
         /// Зарплата сотрудника
         /// </summary>
@@ -26,10 +26,6 @@ namespace Lab1.Employees
         /// <summary>
         /// Проект, в котором участвует сотрудник
         /// </summary>
-        string project { get; }
-        /// <summary>
-        /// Компьютер, который закреплен за этим сотрудником
-        /// </summary>
-        IComputer computer { get; }
+        T computer { get; }
     }
 }

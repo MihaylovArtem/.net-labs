@@ -39,6 +39,10 @@ namespace Lab1.Computers {
             cost = Cost;
             operationSystem = OperationSystem;
         }
+
+        public abstract void installAntivirus();
+
+        public abstract object Clone();
     }
 }
 

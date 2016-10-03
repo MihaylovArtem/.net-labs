@@ -21,5 +21,15 @@ namespace Lab1.Computers {
         {
             Console.WriteLine("Mac added!");
         }
+
+        public override void installAntivirus()
+        {
+            Console.WriteLine("Antivirus downloaded from AppStore");
+        }
+
+        public override object Clone()
+        {
+            return new Mac(purchaseYear, cost);
+        }
     }
 }

@@ -9,19 +9,7 @@ namespace Lab1.Employees {
     /// <summary>
     /// Абстрактный класс с интерфейсом IEmployee
     /// </summary>
-    public abstract class Employee : IEmployee {
-        /// <summary>
-        /// Проект, в котором участвует сотрудник
-        /// </summary>
-        public string project
-        {
-            get { return _project; }
-            set {
-                if (value != null) {
-                    _project = value;
-                }
-            }
-        }
+    public abstract class Employee<T> : IEmployee<T> where T : IComputer {  
         /// <summary>
         /// Зарплата сотрудника
         /// </summary>
@@ -37,21 +25,18 @@ namespace Lab1.Employees {
         /// <summary>
         /// Компьютер, который закреплен за этим сотрудником
         /// </summary>
-        public IComputer computer { get; private set; }
-        private string _project;
+        public T computer { get; private set; }
         /// <summary>
         /// Конструктор класса Employee
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="Position"></param>
         /// <param name="Salary"></param>
-        /// <param name="Project"></param>
         /// <param name="computer"></param>
-        protected Employee(string Name, string Position, int Salary, string Project, IComputer computer) {
+        protected Employee(string Name, string Position, int Salary, T computer) {
             name = Name;
             position = Position;
             salary = Salary;
-            project = Project;
         }
     }
 }
