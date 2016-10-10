@@ -25,7 +25,7 @@ namespace Lab1.Computers {
 
         public override void installAntivirus()
         {
-            Console.WriteLine("Antivirus was successfully installed from bestantirus2106forfree.com");
+            Console.WriteLine("Antivirus was successfully installed from bestantirus2016forfree.com");
         }
 
         public override object Clone()

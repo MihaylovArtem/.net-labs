@@ -26,6 +26,7 @@ namespace Lab1.Employees {
         /// Компьютер, который закреплен за этим сотрудником
         /// </summary>
         public T computer { get; private set; }
+
         /// <summary>
         /// Конструктор класса Employee
         /// </summary>
@@ -33,10 +34,19 @@ namespace Lab1.Employees {
         /// <param name="Position"></param>
         /// <param name="Salary"></param>
         /// <param name="computer"></param>
-        protected Employee(string Name, string Position, int Salary, T computer) {
+
+        
+        protected Employee(string Name, string Position, int Salary, T Computer) {
             name = Name;
             position = Position;
             salary = Salary;
+            computer = Computer;
+        }
+
+        public void performActionWithComputer(Action action)
+        {
+            action();
+            Console.WriteLine("Task completed");
         }
     }
 }

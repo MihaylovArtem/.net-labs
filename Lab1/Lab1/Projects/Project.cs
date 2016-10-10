@@ -60,6 +60,44 @@ namespace Lab1.Projects {
             }
         }
 
+        public void sortTeam(String fieldToSort)
+        {
+            if (fieldToSort == "name")
+            {
+                participants.Sort(delegate(T x, T y)
+                {
+                    if (x.name == null && y.name == null) return 0;
+                    if (x.name == null) return -1;
+                    if (y.name == null) return 1;
+                    return x.name.CompareTo(y.name);
+                });
+            }
+            else
+            {
+                Console.WriteLine("Unknown class field");
+            }
+
+        }
+
+        public void customSortTeam(Func<T, T, bool> res)
+        {
+            bool sortIncompleted = true;
+            do
+            {
+                sortIncompleted = false;
+                for (int i = 0; i < participants.Count() - 1; i++)
+                {
+                    if (res(participants[i], participants[i + 1]))
+                    {
+                        T temp = participants[i];
+                        participants[i] = participants[i + 1];
+                        participants[i + 1] = temp;
+                        sortIncompleted = true;
+                    }
+                }
+            } while (sortIncompleted);
+        }
+
         public void printProjectTeam()
         {
             foreach (T participant in getProjectTeam())

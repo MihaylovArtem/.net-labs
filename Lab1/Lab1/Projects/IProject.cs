@@ -16,6 +16,10 @@ namespace Lab1.Projects {
         /// <summary>
         /// Участники проекта
         /// </summary>
-        List<T> participants { get; } 
+        List<T> participants { get; }
+
+        void sortTeam(String fieldToSort);
+
+        void customSortTeam(Func<T, T, int> res);
     }
 }

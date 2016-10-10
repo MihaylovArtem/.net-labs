@@ -27,5 +27,7 @@ namespace Lab1.Employees
         /// Проект, в котором участвует сотрудник
         /// </summary>
         T computer { get; }
+
+        void performActionWithComputer(Action action);
     }
 }
