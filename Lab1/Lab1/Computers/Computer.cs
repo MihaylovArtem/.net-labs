@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab1.Logger;
 
 namespace Lab1.Computers {
     /// <summary>
@@ -34,6 +35,10 @@ namespace Lab1.Computers {
         /// <param name="OperationSystem"></param>
         protected Computer(int PurchaseYear, string ManufactureCompany, int Cost, string OperationSystem)
         {
+            if (Cost < 0)
+            {
+                throw new UserException("Cost can't be below 0");
+            }
             purchaseYear = PurchaseYear;
             manufactureCompany = ManufactureCompany;
             cost = Cost;

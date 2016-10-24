@@ -18,8 +18,15 @@ namespace Lab1.Projects {
         /// </summary>
         List<T> participants { get; }
 
+        /// <summary>
+        /// Сортировка команды проекта с указанием поля сортировки
+        /// </summary>
+        /// <param name="fieldToSort">Параметр, по которому сортируем</param>
         void sortTeam(String fieldToSort);
-
-        void customSortTeam(Func<T, T, int> res);
+        /// <summary>
+        /// Сортировка команды проекта с указанием порядка сортировки
+        /// </summary>
+        /// <param name="res">метод-делегат, возвращающий результат сравнения 2 эелементов сортируемого списка</param>
+        void customSortTeam(Func<T, T, bool> res);
     }
 }

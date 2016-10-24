@@ -4,16 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lab1.Computers;
+using Lab1.Logger;
 
 namespace Lab1.Employees {
     /// <summary>
     /// Абстрактный класс с интерфейсом IEmployee
     /// </summary>
-    public abstract class Employee<T> : IEmployee<T> where T : IComputer {  
+    public abstract class Employee<T> : IEmployee<T> where T : IComputer
+    {
+
+        public event Action<EmployeeActionArgs> OnUninstallProgram;
+        public event Action<EmployeeActionArgs> OnInstallProgram;
+
         /// <summary>
         /// Зарплата сотрудника
         /// </summary>
-        public int salary { get; private set; }
+        public uint salary { get; private set; }
         /// <summary>
         /// Имя сотрудника
         /// </summary>
@@ -36,7 +42,7 @@ namespace Lab1.Employees {
         /// <param name="computer"></param>
 
         
-        protected Employee(string Name, string Position, int Salary, T Computer) {
+        protected Employee(string Name, string Position, uint Salary, T Computer) {
             name = Name;
             position = Position;
             salary = Salary;
@@ -47,6 +53,24 @@ namespace Lab1.Employees {
         {
             action();
             Console.WriteLine("Task completed");
+        }
+
+        public void installProgram(string programName)
+        {
+            if (programName == null)
+            {
+                throw new UserException("Program name can't be empty");
+            }
+            OnInstallProgram.Invoke(new EmployeeInstallActionArgs(programName));
+        }
+
+        public void uninstallProgram(string programName)
+        {
+            if (programName == null)
+            {
+                throw new UserException("Program name can't be empty");
+            }
+            OnUninstallProgram.Invoke(new EmployeeUninstallActionArgs(programName));
         }
     }
 }

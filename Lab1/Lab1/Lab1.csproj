@@ -52,9 +52,17 @@
     <Compile Include="Computers\Computer.cs" />
     <Compile Include="Computers\IComputer.cs" />
     <Compile Include="Employees\Developer.cs" />
+    <Compile Include="Employees\EmployeeActionArgs.cs" />
     <Compile Include="Employees\Manager.cs" />
     <Compile Include="Employees\Employee.cs" />
     <Compile Include="Employees\IEmployee.cs" />
+    <Compile Include="Logger\EventLogger.cs" />
+    <Compile Include="Logger\ExceptionLogger.cs" />
+    <Compile Include="Logger\IEventLogger.cs" />
+    <Compile Include="Logger\IExceptionLogger.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Logger\UserException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projects\Team.cs" />
     <Compile Include="Projects\IProject.cs" />
