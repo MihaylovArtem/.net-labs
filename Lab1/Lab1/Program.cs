@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(ConfigurationManager.AppSettings["projectName"]);
+            Console.WriteLine(ConfigurationManager.AppSettings["projectVersion"]);
+            Console.WriteLine();
+
             Employee<Mac> newEmployee = new Manager<Mac>("Nikolay", new Mac(2015, 50000));
             var newLogger = new EventLogger<Employee<Mac>>(newEmployee, "E:\\log.txt");
             var exLogger = new ExceptionLogger("E:\\log.txt");
