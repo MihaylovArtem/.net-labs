@@ -66,7 +66,7 @@ namespace Lab1.Employees {
 
         public void uninstallProgram(string programName)
         {
-            if (programName == null)
+            if (string.IsNullOrEmpty(programName))
             {
                 throw new UserException("Program name can't be empty");
             }

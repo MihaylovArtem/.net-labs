@@ -17,6 +17,7 @@ namespace Lab1.Logger {
 
             employee.OnInstallProgram += Employee_eventHandler;
             employee.OnUninstallProgram += Employee_eventHandler;
+            
         }
         /// <summary>
         /// Логгирование события пользователя

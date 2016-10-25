@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,29 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ConfigurationManager.AppSettings["projectName"]);
-            Console.WriteLine(ConfigurationManager.AppSettings["projectVersion"]);
+
+            var exLogger = new ExceptionLogger("E:\\log.txt");
+
+            try
+            {
+                var configFilePath = Path.GetFullPath("config.txt");
+                var newReader = new StreamReader(configFilePath);
+                var st = newReader.ReadLine();
+                var objectsCount = Int32.Parse(st);
+                Console.WriteLine("{0}",objectsCount);
+                newReader.Close();
+            }
+            catch (Exception ex)
+            {   
+                exLogger.LogException(ex);
+            }
+            
             Console.WriteLine();
 
             Employee<Mac> newEmployee = new Manager<Mac>("Nikolay", new Mac(2015, 50000));
             var newLogger = new EventLogger<Employee<Mac>>(newEmployee, "E:\\log.txt");
-            var exLogger = new ExceptionLogger("E:\\log.txt");
+            var newLogger2 = new EventLogger<Employee<Mac>>(newEmployee);
+            
             newEmployee.installProgram("Xcode");
             Console.ReadLine();
             try
@@ -35,7 +52,7 @@ namespace Lab1
             }
             try
             {
-                newEmployee.installProgram(null);
+                newEmployee.installProgram("");
             }
             catch (Exception ex)
             {
