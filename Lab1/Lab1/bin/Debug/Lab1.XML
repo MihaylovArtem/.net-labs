@@ -209,6 +209,7 @@
             <summary>
             Компьютер, который закреплен за этим сотрудником
             </summary>
+            
         </member>
         <member name="T:Lab1.Employees.EmployeeActionArgs">
             <summary>
@@ -304,6 +305,13 @@
             </summary>
             <param name="res">метод-делегат, возвращающий результат сравнения 2 эелементов сортируемого списка</param>
         </member>
+        <member name="M:Lab1.Projects.IProject`1.asyncSortWithProg(System.IProgress{System.Int32})">
+            <summary>
+            Асинхронная сортировка с подсчетом прогресса
+            </summary>
+            <param name="progress">Прогресс</param>
+            <returns></returns>
+        </member>
         <member name="P:Lab1.Projects.IProject`1.name">
             <summary>
             Название проекта
@@ -313,6 +321,20 @@
             <summary>
             Участники проекта
             </summary>
+        </member>
+        <member name="M:Lab1.Serializer.ISerializer`1.deserialize(System.String)">
+            <summary>
+            Десериализовать файл
+            </summary>
+            <param name="filePath">путь к файлу</param>
+            <returns>Результат десериализации</returns>
+        </member>
+        <member name="M:Lab1.Serializer.ISerializer`1.serialize(Lab1.Projects.Project{`0},System.String)">
+            <summary>
+            Сериализовать в файл
+            </summary>
+            <param name="project">Предмет сериализации</param>
+            <param name="filePath">путь к файлу</param>
         </member>
     </members>
 </doc>

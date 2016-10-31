@@ -28,5 +28,11 @@ namespace Lab1.Projects {
         /// </summary>
         /// <param name="res">метод-делегат, возвращающий результат сравнения 2 эелементов сортируемого списка</param>
         void customSortTeam(Func<T, T, bool> res);
+        /// <summary>
+        /// Асинхронная сортировка с подсчетом прогресса
+        /// </summary>
+        /// <param name="progress">Прогресс</param>
+        /// <returns></returns>
+        Task asyncSortWithProg(IProgress<int> progress);
     }
 }

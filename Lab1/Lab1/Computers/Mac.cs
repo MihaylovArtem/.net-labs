@@ -8,6 +8,7 @@ namespace Lab1.Computers {
     /// <summary>
     /// Класс-потомок от абстрактного класса Computer
     /// </summary>
+    [Serializable]
     public class Mac : Computer
     {
         private const string ManufactureCompany = "Apple";
@@ -19,7 +20,12 @@ namespace Lab1.Computers {
         /// <param name="cost"></param>
         public Mac(int purchaseYear, int cost) : base(purchaseYear, ManufactureCompany, cost, Os)
         {
-            Console.WriteLine("Mac added!");
+            //Console.WriteLine("Mac added!");
+        }
+
+        public Mac() : base(2010, "Apple", 30000, "MacOS")
+        {
+            
         }
 
         public override void installAntivirus()

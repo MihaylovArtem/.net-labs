@@ -9,6 +9,7 @@ namespace Lab1.Computers {
     /// <summary>
     /// Класс PC
     /// </summary>
+   [Serializable]
     public class PC : Computer
     {
         private const string Os = "Windows";
@@ -26,6 +27,11 @@ namespace Lab1.Computers {
                 //throw new UserException("Cost can't be below 0");
             }
             Console.WriteLine("PC Added!");
+        }
+
+        public PC() : base(2010, "IBM", 30000, "Windows")
+        {
+            
         }
 
         public override void installAntivirus()

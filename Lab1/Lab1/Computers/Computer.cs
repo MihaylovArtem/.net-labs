@@ -9,23 +9,24 @@ namespace Lab1.Computers {
     /// <summary>
     /// Абстрактный класс Computer с интерфейсом ComputerInt
     /// </summary>
+    [Serializable]
     public abstract class Computer : IComputer {
         /// <summary>
         /// Год покупки
         /// </summary>
-        public int purchaseYear { get; private set; }
+        public int purchaseYear { get; set; }
         /// <summary>
         /// Компания-производитель
         /// </summary>
-        public string manufactureCompany { get; private set; }
+        public string manufactureCompany { get; set; }
         /// <summary>
         /// Стоимость
         /// </summary>
-        public int cost { get; private set; }
+        public int cost { get; set; }
         /// <summary>
         /// Операционная система
         /// </summary>
-        public string operationSystem { get; private set; }
+        public string operationSystem { get; set; }
         /// <summary>
         /// Конструктор класса Computer
         /// </summary>

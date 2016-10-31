@@ -6,3 +6,5 @@ C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.exe
 C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.pdb
 C:\Users\Артём\Desktop\net\Lab1\Lab1\obj\Debug\Lab1.exe
 C:\Users\Артём\Desktop\net\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Newtonsoft.Json.xml

@@ -10,6 +10,7 @@ namespace Lab1.Employees {
     /// <summary>
     /// Абстрактный класс с интерфейсом IEmployee
     /// </summary>
+    [Serializable]
     public abstract class Employee<T> : IEmployee<T> where T : IComputer
     {
 
@@ -19,19 +20,20 @@ namespace Lab1.Employees {
         /// <summary>
         /// Зарплата сотрудника
         /// </summary>
-        public uint salary { get; private set; }
+        public uint salary { get;  set; }
         /// <summary>
         /// Имя сотрудника
         /// </summary>
-        public string name { get; private set; }
+        public string name { get; set; }
         /// <summary>
         /// Должность сотрудника
         /// </summary>
-        public string position { get; private set; }
+        public string position { get; set; }
         /// <summary>
         /// Компьютер, который закреплен за этим сотрудником
         /// </summary>
-        public T computer { get; private set; }
+        /// 
+        public T computer { get; set; }
 
         /// <summary>
         /// Конструктор класса Employee

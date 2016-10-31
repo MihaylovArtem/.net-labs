@@ -9,28 +9,37 @@ namespace Lab1.Logger
 {
     internal class ExceptionLogger : Logger, IExceptionLogger
     {
-
+        private readonly object locker = new object();
         public ExceptionLogger(string path = null) : base(path)
         {
 
         }
         public void LogException(Exception ex)
         {
-            var writer = GetWriter();
-            if (ex is UserException)
+            var threadStart = new ThreadStart(() =>
             {
-                writer.WriteLine("User exception;\nTime: {0};\nType: {1};\nMessage: {2}\n",
-                    DateTime.Now.ToString("HH:mm:ss.fff"),
-                    ex.GetType(), ex.Message);
-            }
-            else
+                lock (locker)
+                {
+                    var writer = GetWriter();
+                    if (ex is UserException) {
+                        writer.WriteLine("User exception;\nTime: {0};\nType: {1};\nMessage: {2}\n",
+                            DateTime.Now.ToString("HH:mm:ss.fff"),
+                            ex.GetType(), ex.Message);
+                    }
+                    else {
+                        writer.WriteLine("System exception;\nTime: {0};\nType: {1};\nMessage: {2}\n",
+                            DateTime.Now.ToString("HH:mm:ss.fff"),
+                            ex.GetType(), ex.Message);
+                    }
+                    writer.WriteLine();
+                    writer.Close();    
+                }
+            });
+            var thread = new Thread(threadStart)
             {
-                writer.WriteLine("System exception;\nTime: {0};\nType: {1};\nMessage: {2}\n",
-                    DateTime.Now.ToString("HH:mm:ss.fff"),
-                    ex.GetType(), ex.Message);
-            }
-            writer.WriteLine();
-            writer.Close();
+                IsBackground = true
+            };
+            thread.Start();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 using Lab1.Computers;
 using Lab1.Employees;
 using Lab1.Logger;
+using Lab1.Projects;
+using Lab1.Serializer;
 
 namespace Lab1
 {
@@ -16,52 +19,61 @@ namespace Lab1
         static void Main(string[] args)
         {
 
-            var exLogger = new ExceptionLogger("E:\\log.txt");
+            var part = new List<Manager<Mac>>();
+            for (int i = 0; i < 100000; i++)
+            {
+                var employee = new Manager<Mac>(i.ToString(), new Mac(2015, 10000));
+                part.Add(employee);
+            }
 
-            try
-            {
-                var configFilePath = Path.GetFullPath("config.txt");
-                var newReader = new StreamReader(configFilePath);
-                var st = newReader.ReadLine();
-                var objectsCount = Int32.Parse(st);
-                Console.WriteLine("{0}",objectsCount);
-                newReader.Close();
-            }
-            catch (Exception ex)
-            {   
-                exLogger.LogException(ex);
-            }
-            
-            Console.WriteLine();
 
-            Employee<Mac> newEmployee = new Manager<Mac>("Nikolay", new Mac(2015, 50000));
-            var newLogger = new EventLogger<Employee<Mac>>(newEmployee, "E:\\log.txt");
-            var newLogger2 = new EventLogger<Employee<Mac>>(newEmployee);
+
+            var proj = new Project<Manager<Mac>>("Test", part);
             
-            newEmployee.installProgram("Xcode");
-            Console.ReadLine();
-            try
-            {
-                var totalPCs = 0;
-                var PC1 = new PC(2014, "Lenovo", 45000);
-                var middleCost = PC1.cost/totalPCs;
-            }
-            catch (Exception ex)
-            {
-                exLogger.LogException(ex);
-            }
-            try
-            {
-                newEmployee.installProgram("");
-            }
-            catch (Exception ex)
-            {
-                exLogger.LogException(ex);
-            }
+            Console.WriteLine("Project added");
+            
+            //proj.asyncSortWithProg(new Progress<int>(Console.WriteLine));
 
             Console.ReadLine();
+
+            var partList = new List<Manager<Mac>>();
+
+            for (var i = 0; i < 10; i++) {
+                var newEmployee = new Manager<Mac>("Алексей", new Mac(2015, (i + 1) * 1000));
+                partList.Add(newEmployee);
+            }
+            var project = new Project<Manager<Mac>>("Test Project", partList);
+
+            //Bin serializer
+            //var bin = new BinarySerializer<Manager<Mac>>();
+            //bin.serialize(project, @"E:\test.dat");
+            //var project2 = bin.deserialize(@"E:\test.dat");
+            //Console.WriteLine("\n\n\n{0}\n", project.name);
+            //for (var i = 0; i < project2.participants.Count; i++)
+            //{
+            //    Console.WriteLine("{0} {1}", project2.participants[i].name, project2.participants[i].computer.cost);              
+            //}
+            //Console.ReadLine();
+
+            //Json serializer
+            var json = new JsonSerializer<Manager<Mac>>();
+            json.serialize(project, @"E:\test.json");
+            var project2 = json.deserialize(@"E:\test.json");
+            Console.WriteLine("\n\n\n{0}\n", project.name);
+            for (var i = 0; i < project2.participants.Count; i++) {
+                Console.WriteLine("{0} {1}", project2.participants[i].name, project2.participants[i].computer.cost);
+            }
+            Console.ReadLine();
+
+            //Xml serializer
+            //var xml = new XmlSerializer<Manager<Mac>>();
+            //xml.serialize(project, @"E:\test.xml");
+            //var project2 = xml.deserialize(@"E:\test.xml");
+            //Console.WriteLine("\n\n\n{0}\n", project.name);
+            //for (var i = 0; i < project2.participants.Count; i++) {
+            //    Console.WriteLine("{0} {1}", project2.participants[i].name, project2.participants[i].computer.cost);
+            //}
+            //Console.ReadLine();
         }
-
-
     }
 }

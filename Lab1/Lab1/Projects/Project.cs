@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Lab1.Computers;
 using Lab1.Employees;
+using Newtonsoft.Json;
 
 namespace Lab1.Projects {
     public class Project<T> : IProject<T> where T : IEmployee<IComputer>
@@ -51,7 +53,7 @@ namespace Lab1.Projects {
         {
             return participants.Remove(item);
         }
-
+        [JsonIgnore]
         public int Count
         {
             get
@@ -81,7 +83,7 @@ namespace Lab1.Projects {
 
         public void customSortTeam(Func<T, T, bool> res)
         {
-            bool sortIncompleted = true;
+            bool sortIncompleted;
             do
             {
                 sortIncompleted = false;
@@ -96,6 +98,35 @@ namespace Lab1.Projects {
                     }
                 }
             } while (sortIncompleted);
+        }
+
+        public async Task asyncSortWithProg(IProgress<int> progress)
+        {
+            await Task.Run(() =>
+            {
+                var lastProg = -1;
+                for (var i = 0; i < participants.Count; i++)
+                {
+                    var min = i;
+                    for (var j = i + 1; j < participants.Count; j++)
+                    {
+                        if (participants[j - 1].salary < participants[j].salary)
+                        {
+                            min = j;
+                        }
+                    }
+                    var tmp = participants[i];
+                    participants[i] = participants[min];
+                    participants[min] = tmp;
+
+                    var curProg = 100*i/participants.Count;
+                    if (curProg != lastProg)
+                    {
+                        progress.Report(curProg);
+                        lastProg = curProg;
+                    }
+                }
+            });
         }
 
         public void printProjectTeam()
@@ -113,7 +144,6 @@ namespace Lab1.Projects {
                 yield return participants[i];
             }
         }
-
         public bool IsReadOnly
         {
             get { return false; }
