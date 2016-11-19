@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ProjectWrapperOfManagerOfMac xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Test Project">
+  <participants>
+    <ManagerOfMac>
+      <salary>30000</salary>
+      <name>Алексей</name>
+      <position>Project manager</position>
+      <computer>
+        <purchaseYear>2015</purchaseYear>
+        <manufactureCompany>Apple</manufactureCompany>
+        <cost>50000</cost>
+        <operationSystem>MacOS</operationSystem>
+      </computer>
+    </ManagerOfMac>
+    <ManagerOfMac>
+      <salary>30000</salary>
+      <name>Андрей</name>
+      <position>Project manager</position>
+      <computer>
+        <purchaseYear>2014</purchaseYear>
+        <manufactureCompany>Apple</manufactureCompany>
+        <cost>30000</cost>
+        <operationSystem>MacOS</operationSystem>
+      </computer>
+    </ManagerOfMac>
+    <ManagerOfMac>
+      <salary>30000</salary>
+      <name>Николай</name>
+      <position>Project manager</position>
+      <computer>
+        <purchaseYear>2014</purchaseYear>
+        <manufactureCompany>Apple</manufactureCompany>
+        <cost>45000</cost>
+        <operationSystem>MacOS</operationSystem>
+      </computer>
+    </ManagerOfMac>
+  </participants>
+</ProjectWrapperOfManagerOfMac>

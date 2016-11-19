@@ -22,10 +22,6 @@ namespace Lab1.Computers {
         public PC(int purchaseYear, string manufactureCompany, int cost)
             : base(purchaseYear, manufactureCompany, cost, Os)
         {
-            if (cost < 0)
-            {
-                //throw new UserException("Cost can't be below 0");
-            }
             Console.WriteLine("PC Added!");
         }
 

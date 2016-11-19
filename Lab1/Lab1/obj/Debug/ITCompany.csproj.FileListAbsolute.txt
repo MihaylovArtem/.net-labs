@@ -1,0 +1,11 @@
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.XML
+C:\Users\Артём\Desktop\net\Lab1\Lab1\obj\Debug\Lab1.exe
+C:\Users\Артём\Desktop\net\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Артём\Desktop\net\Lab1\Lab1\obj\Debug\ITCompany.csprojResolveAssemblyReference.cache
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.exe
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\nunit.framework.dll
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Артём\Desktop\net\Lab1\Lab1\bin\Debug\nunit.framework.xml

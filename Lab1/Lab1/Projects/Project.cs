@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Lab1.Computers;
 using Lab1.Employees;
 using Newtonsoft.Json;
@@ -15,8 +16,8 @@ namespace Lab1.Projects {
     public class Project<T> : IProject<T> where T : IEmployee<IComputer>
     {
 
-        public string name { get; private set; }
-        public List<T> participants { get; private set; } 
+        public string name { get; set; }
+        public List<T> participants { get; set; } 
         public Project(string Name)
         {
            name = Name;
@@ -54,6 +55,7 @@ namespace Lab1.Projects {
             return participants.Remove(item);
         }
         [JsonIgnore]
+        [XmlIgnoreAttribute]
         public int Count
         {
             get
@@ -74,31 +76,8 @@ namespace Lab1.Projects {
                     return x.name.CompareTo(y.name);
                 });
             }
-            else
-            {
-                Console.WriteLine("Unknown class field");
-            }
-
         }
 
-        public void customSortTeam(Func<T, T, bool> res)
-        {
-            bool sortIncompleted;
-            do
-            {
-                sortIncompleted = false;
-                for (int i = 0; i < participants.Count() - 1; i++)
-                {
-                    if (res(participants[i], participants[i + 1]))
-                    {
-                        T temp = participants[i];
-                        participants[i] = participants[i + 1];
-                        participants[i + 1] = temp;
-                        sortIncompleted = true;
-                    }
-                }
-            } while (sortIncompleted);
-        }
 
         public async Task asyncSortWithProg(IProgress<int> progress)
         {
@@ -110,7 +89,7 @@ namespace Lab1.Projects {
                     var min = i;
                     for (var j = i + 1; j < participants.Count; j++)
                     {
-                        if (participants[j - 1].salary < participants[j].salary)
+                        if (participants[j - 1].name.CompareTo(participants[j].name) < 0)
                         {
                             min = j;
                         }

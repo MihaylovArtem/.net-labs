@@ -10,7 +10,7 @@ using Lab1.Employees;
 using Lab1.Projects;
 
 namespace Lab1.Serializer {
-    class BinarySerializer<T> : ISerializer<T> where T : IEmployee<IComputer>
+    public class BinarySerializer<T> : ISerializer<T> where T : IEmployee<IComputer>
     {
         private readonly BinaryFormatter formatter;
 
@@ -18,7 +18,6 @@ namespace Lab1.Serializer {
         {
             formatter = new BinaryFormatter();
         }
-
         public Project<T> deserialize(string path)
         {
             var fileStream = new FileStream(path, FileMode.Open);

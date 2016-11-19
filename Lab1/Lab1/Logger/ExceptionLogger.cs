@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab1.Logger
 {
-    internal class ExceptionLogger : Logger, IExceptionLogger
+    public class ExceptionLogger : Logger, IExceptionLogger
     {
         private readonly object locker = new object();
         public ExceptionLogger(string path = null) : base(path)
@@ -20,6 +20,7 @@ namespace Lab1.Logger
             {
                 lock (locker)
                 {
+                    Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
                     var writer = GetWriter();
                     if (ex is UserException) {
                         writer.WriteLine("User exception;\nTime: {0};\nType: {1};\nMessage: {2}\n",

@@ -9,7 +9,7 @@ using Lab1.Computers;
 using Lab1.Employees;
 
 namespace Lab1.Logger {
-    class EventLogger<T> : Logger, IEventLogger<T> where T : IEmployee<IComputer>
+    public class EventLogger<T> : Logger, IEventLogger<T> where T : IEmployee<IComputer>
     {
         private readonly T employee;
         private readonly object locker = new object();

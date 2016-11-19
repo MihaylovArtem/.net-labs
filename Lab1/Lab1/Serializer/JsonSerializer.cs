@@ -10,7 +10,7 @@ using Lab1.Projects;
 using Newtonsoft.Json;
 
 namespace Lab1.Serializer {
-    class JsonSerializer<T> : ISerializer<T> where T : IEmployee<IComputer>
+    public class JsonSerializer<T> : ISerializer<T> where T : IEmployee<IComputer>
     {
         public Project<T> deserialize(string filePath)
         {

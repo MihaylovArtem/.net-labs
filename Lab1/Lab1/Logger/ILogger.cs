@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Logger {
-    enum LoggerType
+    public enum LoggerType
     {
         console,
         file

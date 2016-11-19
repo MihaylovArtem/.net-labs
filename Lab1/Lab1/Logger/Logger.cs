@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab1.Logger {
 
-    abstract class Logger : ILogger {
+    abstract public class Logger : ILogger {
         public string logFilePath { get; private set; }
         public LoggerType loggerType { get; private set; }
 

@@ -8,7 +8,7 @@ using Lab1.Computers;
 namespace Lab1.Employees
 {
     [Serializable]
-    class Developer<T> : Employee<T> where T : IComputer
+    public class Developer<T> : Employee<T> where T : IComputer
     {
         private const string Position = "Developer";
         private const int Salary = 60000;

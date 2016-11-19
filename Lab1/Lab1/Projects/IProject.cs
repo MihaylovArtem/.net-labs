@@ -23,11 +23,7 @@ namespace Lab1.Projects {
         /// </summary>
         /// <param name="fieldToSort">Параметр, по которому сортируем</param>
         void sortTeam(String fieldToSort);
-        /// <summary>
-        /// Сортировка команды проекта с указанием порядка сортировки
-        /// </summary>
-        /// <param name="res">метод-делегат, возвращающий результат сравнения 2 эелементов сортируемого списка</param>
-        void customSortTeam(Func<T, T, bool> res);
+
         /// <summary>
         /// Асинхронная сортировка с подсчетом прогресса
         /// </summary>

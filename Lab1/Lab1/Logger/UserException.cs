@@ -8,7 +8,7 @@ namespace Lab1.Logger {
     /// <summary>
     /// Пользовательское исключение
     /// </summary>
-    class UserException : Exception {
+    public class UserException : Exception {
         public UserException(string message) : base(message) {
 
         }

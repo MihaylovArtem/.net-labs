@@ -8,9 +8,11 @@ using System.Xml.Serialization;
 using Lab1.Computers;
 using Lab1.Employees;
 using Lab1.Projects;
+using NUnit.Framework;
 
 namespace Lab1.Serializer {
-    class XmlSerializer<T> : ISerializer<T> where T: IEmployee<IComputer>
+
+    public class XmlSerializer<T> : ISerializer<T> where T: IEmployee<IComputer>
     {
         private readonly XmlSerializer formatter;
 

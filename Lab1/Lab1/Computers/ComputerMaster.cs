@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    class ComputerMaster<T> : IComputerMaster<T> where T : IComputer
+    public class ComputerMaster<T> : IComputerMaster<T> where T : IComputer
     {
         /// <summary>
         /// Ремонт компьютера

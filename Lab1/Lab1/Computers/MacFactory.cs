@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab1.Computers {
-    class MacFactory : IComputerFactory {
+    public class MacFactory : IComputerFactory {
         /// <summary>
         /// Переопределение метода абстрактной фабрики
         /// </summary>

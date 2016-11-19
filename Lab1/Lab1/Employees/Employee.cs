@@ -41,7 +41,7 @@ namespace Lab1.Employees {
         /// <param name="Name"></param>
         /// <param name="Position"></param>
         /// <param name="Salary"></param>
-        /// <param name="computer"></param>
+        /// <param name="Computer"></param>
 
         
         protected Employee(string Name, string Position, uint Salary, T Computer) {
