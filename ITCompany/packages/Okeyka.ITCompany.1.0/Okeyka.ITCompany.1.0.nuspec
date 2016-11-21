@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Okeyka.ITCompany</id>
+    <version>1.0</version>
+    <title>Okeyka.ITCompany</title>
+    <authors>Mihaylov Artem</authors>
+    <owners>Mihaylov Artem</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>IT Company package</description>
+    <summary />
+    <tags>ITCompany</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0.0" />
+    </dependencies>
+  </metadata>
+</package>

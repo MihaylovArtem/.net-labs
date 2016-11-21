@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITCompany</name>
+    </assembly>
+    <members>
+        <member name="M:ITCompany.Computers.IComputerMaster`1.repair(`0)">
+            <summary>
+            Ремонт компьютера
+            </summary>
+            <param name="computer"></param>
+        </member>
+        <member name="M:ITCompany.Computers.ComputerMaster`1.repair(`0)">
+            <summary>
+            Ремонт компьютера
+            </summary>
+            <param name="computer"></param>
+        </member>
+        <member name="T:ITCompany.Computers.IComputerFactory">
+            <summary>
+            Интерфейс абстрактной фабрики
+            </summary>
+        </member>
+        <member name="M:ITCompany.Computers.IComputerFactory.BuyNewComputer">
+            <summary>
+            Купить новый компьютер
+            </summary>
+            <returns>Объект класса Computer</returns>
+        </member>
+        <member name="M:ITCompany.Computers.MacFactory.BuyNewComputer">
+            <summary>
+            Переопределение метода абстрактной фабрики
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITCompany.Computers.PCFactory.BuyNewComputer">
+            <summary>
+            Переопределение метода абстрактной фабрики
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ITCompany.Computers.PC">
+            <summary>
+            Класс PC
+            </summary>
+        </member>
+        <member name="T:ITCompany.Computers.Computer">
+            <summary>
+            Абстрактный класс Computer с интерфейсом ComputerInt
+            </summary>
+        </member>
+        <member name="T:ITCompany.Computers.IComputer">
+            <summary>
+            Интерфейс класса Computer
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.IComputer.purchaseYear">
+            <summary>
+            Год покупки
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.IComputer.manufactureCompany">
+            <summary>
+            Компания-производитель
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.IComputer.cost">
+            <summary>
+            Стоимость
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.IComputer.operationSystem">
+            <summary>
+            Операционная система
+            </summary>
+        </member>
+        <member name="M:ITCompany.Computers.Computer.#ctor(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            Конструктор класса Computer
+            </summary>
+            <param name="PurchaseYear"></param>
+            <param name="ManufactureCompany"></param>
+            <param name="Cost"></param>
+            <param name="OperationSystem"></param>
+        </member>
+        <member name="P:ITCompany.Computers.Computer.purchaseYear">
+            <summary>
+            Год покупки
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.Computer.manufactureCompany">
+            <summary>
+            Компания-производитель
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.Computer.cost">
+            <summary>
+            Стоимость
+            </summary>
+        </member>
+        <member name="P:ITCompany.Computers.Computer.operationSystem">
+            <summary>
+            Операционная система
+            </summary>
+        </member>
+        <member name="M:ITCompany.Computers.PC.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Конструктор класса PC
+            </summary>
+            <param name="purchaseYear"></param>
+            <param name="manufactureCompany"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="T:ITCompany.Computers.Mac">
+            <summary>
+            Класс-потомок от абстрактного класса Computer
+            </summary>
+        </member>
+        <member name="M:ITCompany.Computers.Mac.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Конструктор класса Mac
+            </summary>
+            <param name="purchaseYear"></param>
+            <param name="cost"></param>
+        </member>
+        <member name="T:ITCompany.Employees.Employee`1">
+            <summary>
+            Абстрактный класс с интерфейсом IEmployee
+            </summary>
+        </member>
+        <member name="T:ITCompany.Employees.IEmployee`1">
+            <summary>
+            Интерфейс класса Employee
+            </summary>
+        </member>
+        <member name="M:ITCompany.Employees.IEmployee`1.performActionWithComputer(System.Action)">
+            <summary>
+            Выполнить действие над компьютером
+            </summary>
+            <param name="action">выполняемое действие</param>
+        </member>
+        <member name="M:ITCompany.Employees.IEmployee`1.installProgram(System.String)">
+            <summary>
+            Установка программы
+            </summary>
+            <param name="programName">Название программы</param>
+        </member>
+        <member name="M:ITCompany.Employees.IEmployee`1.uninstallProgram(System.String)">
+            <summary>
+            Удаление программы
+            </summary>
+            <param name="programName">Название программы</param>
+        </member>
+        <member name="E:ITCompany.Employees.IEmployee`1.OnUninstallProgram">
+            <summary>
+            Событие удаления программы
+            </summary>
+        </member>
+        <member name="E:ITCompany.Employees.IEmployee`1.OnInstallProgram">
+            <summary>
+            Событие удаления программы
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.IEmployee`1.salary">
+            <summary>
+            Зарплата сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.IEmployee`1.name">
+            <summary>
+            Имя сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.IEmployee`1.position">
+            <summary>
+            Должность сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.IEmployee`1.computer">
+            <summary>
+            Проект, в котором участвует сотрудник
+            </summary>
+        </member>
+        <member name="M:ITCompany.Employees.Employee`1.#ctor(System.String,System.String,System.UInt32,`0)">
+            <summary>
+            Конструктор класса Employee
+            </summary>
+            <param name="Name"></param>
+            <param name="Position"></param>
+            <param name="Salary"></param>
+            <param name="Computer"></param>
+        </member>
+        <member name="P:ITCompany.Employees.Employee`1.salary">
+            <summary>
+            Зарплата сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.Employee`1.name">
+            <summary>
+            Имя сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.Employee`1.position">
+            <summary>
+            Должность сотрудника
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.Employee`1.computer">
+            <summary>
+            Компьютер, который закреплен за этим сотрудником
+            </summary>
+            
+        </member>
+        <member name="T:ITCompany.Employees.EmployeeActionArgs">
+            <summary>
+            Аргументы событий сотрудника
+            </summary>
+        </member>
+        <member name="T:ITCompany.Employees.EmployeeInstallActionArgs">
+            <summary>
+            Аргументы события установки программы
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.EmployeeInstallActionArgs.programName">
+            <summary>
+            Название программы
+            </summary>
+        </member>
+        <member name="T:ITCompany.Employees.EmployeeUninstallActionArgs">
+            <summary>
+            Аргументы события удаления программы
+            </summary>
+        </member>
+        <member name="P:ITCompany.Employees.EmployeeUninstallActionArgs.programName">
+            <summary>
+            Название программы
+            </summary>
+        </member>
+        <member name="T:ITCompany.Employees.Manager`1">
+            <summary>
+            Класс-потомок абстрактного класса Employee
+            </summary>
+        </member>
+        <member name="M:ITCompany.Employees.Manager`1.#ctor(System.String,`0)">
+            <summary>
+            Конструктор класса Manager
+            </summary>
+            <param name="name"></param>
+            <param name="computer"></param>
+        </member>
+        <member name="T:ITCompany.Logger.ILogger">
+            <summary>
+            Базовый класс логгера
+            </summary>
+        </member>
+        <member name="P:ITCompany.Logger.ILogger.loggerType">
+            <summary>
+            Тип логгера (файл или консоль)
+            </summary>
+        </member>
+        <member name="P:ITCompany.Logger.ILogger.logFilePath">
+            <summary>
+            Путь к файлу, в который пишутся логи
+            </summary>
+        </member>
+        <member name="M:ITCompany.Logger.Logger.GetWriter">
+            <summary>
+            Получение TextWriter'a в зависимости от типа логгирования
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ITCompany.Logger.EventLogger`1.LogEmployeeEvent(System.IO.TextWriter,`0,ITCompany.Employees.EmployeeActionArgs)">
+            <summary>
+            Логгирование события пользователя
+            </summary>
+            <param name="writer"></param>
+            <param name="emp"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:ITCompany.Logger.IExceptionLogger">
+            <summary>
+            класс для логирования системных и пользовательских исключений
+            </summary>
+        </member>
+        <member name="M:ITCompany.Logger.IExceptionLogger.LogException(System.Exception)">
+            <summary>
+            Логгирование исключений
+            </summary>
+            <param name="ex">Логгируемое исключение</param>
+        </member>
+        <member name="T:ITCompany.Logger.UserException">
+            <summary>
+            Пользовательское исключение
+            </summary>
+        </member>
+        <member name="M:ITCompany.Projects.IProject`1.sortTeam(System.String)">
+            <summary>
+            Сортировка команды проекта с указанием поля сортировки
+            </summary>
+            <param name="fieldToSort">Параметр, по которому сортируем</param>
+        </member>
+        <member name="M:ITCompany.Projects.IProject`1.asyncSortWithProg(System.IProgress{System.Int32})">
+            <summary>
+            Асинхронная сортировка с подсчетом прогресса
+            </summary>
+            <param name="progress">Прогресс</param>
+            <returns></returns>
+        </member>
+        <member name="P:ITCompany.Projects.IProject`1.name">
+            <summary>
+            Название проекта
+            </summary>
+        </member>
+        <member name="P:ITCompany.Projects.IProject`1.participants">
+            <summary>
+            Участники проекта
+            </summary>
+        </member>
+        <member name="M:ITCompany.Serializer.ISerializer`1.deserialize(System.String)">
+            <summary>
+            Десериализовать файл
+            </summary>
+            <param name="filePath">путь к файлу</param>
+            <returns>Результат десериализации</returns>
+        </member>
+        <member name="M:ITCompany.Serializer.ISerializer`1.serialize(ITCompany.Projects.Project{`0},System.String)">
+            <summary>
+            Сериализовать в файл
+            </summary>
+            <param name="project">Предмет сериализации</param>
+            <param name="filePath">путь к файлу</param>
+        </member>
+        <member name="T:ITCompany.Serializer.ProjectWrapper`1">
+            <summary>
+            обертка для класса-коллекции (используется для сериализации)
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+    </members>
+</doc>
