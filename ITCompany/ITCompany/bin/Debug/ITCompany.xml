@@ -82,6 +82,7 @@
             <param name="ManufactureCompany"></param>
             <param name="Cost"></param>
             <param name="OperationSystem"></param>
+            <exception cref="T:ITCompany.Logger.UserException">Thrown when cost below 0</exception>
         </member>
         <member name="P:ITCompany.Computers.Computer.purchaseYear">
             <summary>
@@ -276,6 +277,12 @@
             <param name="writer"></param>
             <param name="emp"></param>
             <param name="args"></param>
+        </member>
+        <member name="M:ITCompany.Logger.EventLogger`1.Log(System.String)">
+            <summary>
+            Логгирует сообщение
+            </summary>
+            <param name="Message"></param>
         </member>
         <member name="T:ITCompany.Logger.IExceptionLogger">
             <summary>

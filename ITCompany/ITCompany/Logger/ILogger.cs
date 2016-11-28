@@ -22,5 +22,6 @@ namespace ITCompany.Logger {
         /// Путь к файлу, в который пишутся логи
         /// </summary>
         string logFilePath { get; }
+
     }
 }

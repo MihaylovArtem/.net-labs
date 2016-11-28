@@ -11,7 +11,7 @@ namespace ITCompany.Logger {
         public string logFilePath { get; private set; }
         public LoggerType loggerType { get; private set; }
 
-        protected Logger(string filePath)
+        public Logger(string filePath)
         {
             if (filePath == null)
             {

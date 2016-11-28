@@ -34,6 +34,7 @@ namespace ITCompany.Computers {
         /// <param name="ManufactureCompany"></param>
         /// <param name="Cost"></param>
         /// <param name="OperationSystem"></param>
+        /// <exception cref="UserException">Thrown when cost below 0</exception>
         protected Computer(int PurchaseYear, string ManufactureCompany, int Cost, string OperationSystem)
         {
             if (Cost < 0)

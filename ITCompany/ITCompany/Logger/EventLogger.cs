@@ -21,6 +21,10 @@ namespace ITCompany.Logger {
             employee.OnUninstallProgram += Employee_eventHandler;
             
         }
+
+        public EventLogger (string filePath = null) : base(filePath) {
+
+        }
         /// <summary>
         /// Логгирование события пользователя
         /// </summary>
@@ -31,6 +35,17 @@ namespace ITCompany.Logger {
         {
              writer.WriteLine("Employee:{0}, Action:{1}", emp.name, args.ActionType);
              writer.WriteLine();
+        }
+        /// <summary>
+        /// Логгирует сообщение
+        /// </summary>
+        /// <param name="Message"></param>
+        public void Log(string Message) {
+            var writer = GetWriter();
+            writer.WriteLine("{0}", DateTime.Now.ToString("HH:mm:ss.fff"));
+            writer.WriteLine("{0}", Message);
+            writer.WriteLine();
+            writer.Close();
         }
 
         private void Employee_eventHandler(EmployeeActionArgs args)

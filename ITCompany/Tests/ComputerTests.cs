@@ -88,7 +88,7 @@ namespace Tests {
         /// </summary>
         [Test]
         public void costBelowZeroTest() {
-            Assert.Throws<UserException>(() => new Mac(2014, -1000));
+            Assert.Throws<UserException>(() => new Mac(2014, -11000));
         }
         /// <summary>
         /// Тест Сlonable 

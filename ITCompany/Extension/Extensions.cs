@@ -17,9 +17,11 @@ namespace Extension {
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="project"></param>
+        /// <param name="logger"></param>
         /// <returns></returns>
-        public static string ConvertToString<T>(this Project<T> project) where T : IEmployee<IComputer> {
+        public static string ConvertToString<T>(this Project<T> project, EventLogger<IEmployee<IComputer>> logger = null) where T : IEmployee<IComputer> {
             var wrapper = new ProjectWrapper<T>(project);
+            logger.Log("Converted to string");
             return JsonConvert.SerializeObject(wrapper, Formatting.Indented);
         }
         /// <summary>
@@ -27,8 +29,10 @@ namespace Extension {
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="project"></param>
+        /// <param name="logger"></param>
         /// <returns></returns>
-        public static List<T> FindEmployeesWithLongName<T>(this Project<T> project) where T : IEmployee<IComputer> {
+        public static List<T> FindEmployeesWithLongName<T>(this Project<T> project, EventLogger<IEmployee<IComputer>> logger = null) where T : IEmployee<IComputer> {
+            logger.Log("Finded all employes with long name");
             return project.Where(t => t.name.Length > 7).ToList();
         }
         /// <summary>
@@ -36,8 +40,10 @@ namespace Extension {
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="project"></param>
+        /// <param name="logger"></param>
         /// <returns></returns>
-        public static List<T> FindEmployeesWithOldMacs<T>(this Project<T> project) where T : IEmployee<IComputer> {
+        public static List<T> FindEmployeesWithOldMacs<T>(this Project<T> project, EventLogger<IEmployee<IComputer>> logger = null) where T : IEmployee<IComputer> {
+            logger.Log("Finded all employes with old macs");
             return project.Where(t => t.computer.purchaseYear < 2014).ToList();
         }
     }
